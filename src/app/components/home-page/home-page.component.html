@@ -1,0 +1,4 @@
+<div style="width: 100%; height:90vh; display: flex; justify-content: center; align-items: center;">
+    <app-login-form [userType]="'User'" [type]="'Please Register New  User'" 
+        [isLoading]="userLogin" (loginDetails)="handleUserLogin($event)"></app-login-form>
+</div>

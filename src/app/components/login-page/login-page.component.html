@@ -1,0 +1,9 @@
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; height: 90vh;">
+    <div style="padding: 20px; display: flex; align-items: center;">
+        <app-login-form [userType]="'User'" [type]="'Login'" [isLoading]="userLogin" (loginDetails)="handleUserLogin($event)"></app-login-form>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div style="padding: 20px; display: flex; align-items: center;">
+        <app-login-form [userType]="'Admin'" [type]="'Login'" [isLoading]="adminLogin" (loginDetails)="handleAdminLogin($event)"></app-login-form>
+    </div>
+</div>

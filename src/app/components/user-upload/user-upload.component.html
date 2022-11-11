@@ -1,0 +1,23 @@
+
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; height:90vh">
+    <mat-card class="example-card">
+        <mat-card-subtitle>Upload Files</mat-card-subtitle>
+        <mat-card-content>
+            <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                    <input type="file" style="display: none;" (change)="browseFiles($event)" #fileInput>
+                    <mat-label *ngIf="file; else noSelect">{{file.name}}</mat-label>
+                    <ng-template #noSelect>
+                        <mat-label>No file Selected</mat-label>
+                    </ng-template>
+                    <button mat-stroked-button color="primary" (click)="fileInput.click()">Browse</button>
+            </div>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+                <mat-card-actions align="end">
+                  <button mat-stroked-button color="primary" (click)="uploadFiles()">Upload</button>
+                </mat-card-actions>
+                <mat-card-footer>
+                  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+                </mat-card-footer>
+    </mat-card>
+</div>
